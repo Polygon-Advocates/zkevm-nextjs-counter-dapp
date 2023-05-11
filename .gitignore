@@ -1,0 +1,23 @@
+# General
+####################
+.DS_Store
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+
+# Next.js / Frontend
+####################
+.next/
+out/
+
+# Build artifacts
+####################
+dist/
+
+# Editor-specific files
+####################
+.vscode/
+.idea/
+*.swp
+*.swo
