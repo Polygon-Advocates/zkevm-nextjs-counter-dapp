@@ -1,5 +1,5 @@
 # Counter DApp
-![Dapp banner](./assets/full-stack-counter-dapp.png)  
+![Dapp banner](./assets/full-stack-counter-dapp.jpg)  
 
 This project is a simple decentralized counter application (DApp) that demonstrates how to build a full-stack DApp using Next.js, Web3.js, Foundry, and Polygon zkEVM. Users can interact with the counter by incrementing and decrementing its value through a user-friendly interface.
 
