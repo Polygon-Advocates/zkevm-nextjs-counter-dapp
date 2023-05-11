@@ -105,7 +105,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={styles.footerH2}>
-            Docs
+            Foundry
             <span className={styles.arrow}>-&gt;</span>
           </h2>
           <p className={styles.footerP}>Start Building on Polygon zkEVM</p>
@@ -118,7 +118,7 @@ export default function Home() {
           rel="noopener noreferrer"
         >
           <h2 className={styles.footerH2}>
-            Advocates
+            Next.js
             <span className={styles.arrow}>-&gt;</span>
           </h2>
           <p className={styles.footerP}>Join the BFFs club</p>
