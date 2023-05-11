@@ -6,15 +6,19 @@
 ## 👩🏻‍🔧 Technologies
 
 - **💻 Frontend**: 
+
 [Next.js](https://nextjs.org/docs) - A React-based framework for server-rendered applications.
 
 - **⛓️ Blockchain Interaction**: 
+
 [Web3.js](https://web3js.readthedocs.io/en/v1.10.0/) - A JavaScript library for interacting with Ethereum-based blockchains.
 
 - **📜 Smart Contracts**: 
+
 [Foundry](https://book.getfoundry.sh/) - A Rust-based smart contract development framework for writing, testing, and deploying contracts.
 
-- **💜 Blockchain Network**: 
+- **💜 Blockchain Network**:
+
 [Polygon zkEVM](https://zkevm.polygon.technology/) - A Layer 2 Ethereum-compatible scalable network, utilizing zero-knowledge rollups for efficient and secure transactions.
 
 ## 🧑‍💻 Getting Started
