@@ -1,27 +1,246 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+/* Define default color variables in root for reuse in document */
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground-rgb: 0, 0, 0; /* Black */
+  --background-start-rgb: 214, 219, 220; /* Light grey */
+  --background-end-rgb: 255, 255, 255; /* White */
 }
 
+/* Modify color variables for dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255; /* White */
+    --background-start-rgb: 0, 0, 0; /* Black */
+    --background-end-rgb: 0, 0, 0; /* Black */
   }
 }
 
+/* Set the color and background of the body using the color variables */
 body {
+  /* Text color is determined by foreground-rgb variable */
   color: rgb(var(--foreground-rgb));
+
+  /* Background color is a gradient, transitioning from transparent to 
+  the color determined by the background-end-rgb variable, over the color 
+  determined by the background-start-rgb variable */
   background: linear-gradient(
       to bottom,
       transparent,
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* Reset all elements to ensure uniform styles */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+/* Container acts as a flex wrapper for the child elements */
+.container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+/* Navigation bar styling, also using flex for alignment */
+.nav {
+  width: 100%;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 80rem;
+  font-size: 0.875rem;
+  padding: 1rem;
+}
+
+/* Styling for the navigation title, includes a blurred background effect */
+.navTitle {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid rgb(38 38 38 / 1);
+  background-color: rgb(39 39 42 / 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 0.75rem;
+}
+
+/* Styles for the "presentedBy" container, designed to layout its child elements */
+.presentedBy {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  text-decoration: none;
+  color: white;
+}
+
+/* Text styling for "codeText", meant to be bold and centered */
+.codeText {
+  margin-left: 0.5rem;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Styling for the navigation link, with spacing, padding and non-interactive */
+.navLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem;
+  pointer-events: none;
+}
+
+/* Container for buttons with centralized alignment */
+.buttonBox {
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Spacing for buttons inside the button box */
+.buttonBox .button {
+  margin: 15px;
+}
+
+/* Button styling, includes gradient, rounded corners, typography, and hover effect */
+.button {
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: linear-gradient(to bottom, #8a46ff, #6e38cc);
+  border-radius: 50px;
+  padding: 15px 35px;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+  margin: 5px;
+  border: none;
+  outline: none;
+}
+
+/* Button hover effect */
+.button:hover {
+  opacity: 0.9;
+}
+
+/* Styling for "counterText", a large, bold, and centered text */
+.counterText {
+  font-size: 6rem;
+  line-height: 1;
+  text-align: center;
+  padding: 2rem;
+  font-weight: 700;
+  filter: drop-shadow(0 0 0.3rem #ffffff70);
+}
+
+/* Pseudo-element for "element", creating a fullscreen background with blur */
+.element:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  border-radius: 0%;
+  background: linear-gradient(to bottom right, transparent, #6e38cc);
+  filter: blur(1000px);
+  z-index: -50;
+}
+
+/* Footer container styling with flexible layout and spacing */
+.footer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  max-width: 80rem;
+}
+
+/* Footer link styling with smooth transition on hover */
+.footerLink {
+  text-decoration: none;
+  color: white;
+  width: 25%;
+  padding: 1rem 1.25rem;
+  border: none;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition: all 0.5s ease-in-out;
+}
+/* Border added on hover with a blurry effect */
+.footerLink:hover {
+  border: 1px solid rgba(112, 112, 112, 0.5);
+  backdrop-filter: blur(100px);
+}
+
+/* Footer title styling */
+.footerH2 {
+  margin-bottom: 0.75rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Arrow icon styling with transition for smooth effects */
+.arrow {
+  display: inline-block;
+  transition: transform 0.15s ease-in-out;
+  margin-left: 10px;
+}
+
+/* Paragraph text within the footer */
+.footerP {
+  margin: 0;
+  max-width: 30ch;
+  font-size: 0.875rem;
+  opacity: 0.5;
+}
+
+/* Responsive design: Styles change for screen sizes 768px or smaller */
+@media (max-width: 768px) {
+  /* Stacking elements vertically in navigation and container on smaller screens */
+  .nav,
+  .navTitle,
+  .presentedBy,
+  .navRightBox,
+  .buttonBox,
+  .footer {
+    flex-direction: column;
+  }
+
+  /* Additional responsive adjustments for padding, margin, and widths */
+  .navTitle,
+  .navRightBox .button {
+    text-align: center;
+    width: 100%;
+  }
+  .container,
+  .buttonBox {
+    padding: 0;
+  }
+  .presentedBy {
+    margin-top: 15px;
+  }
+  .navRightBox {
+    padding: 20px 0;
+  }
+  .footer {
+    padding: 1rem;
+  }
+  .footerLink {
+    width: 100%;
+  }
+  .counterBox {
+    padding: 5rem 0;
+  }
 }
